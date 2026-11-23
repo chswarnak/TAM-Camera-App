@@ -1,0 +1,505 @@
+{
+  "party": {
+    "name": "Diwali Night",
+    "hosts": [
+      "Your Family"
+    ]
+  },
+  "teams": [
+    {
+      "name": "Diya",
+      "color": "#D4A017"
+    },
+    {
+      "name": "Rangoli",
+      "color": "#E0457B"
+    },
+    {
+      "name": "Phuljhari",
+      "color": "#2E9E5B"
+    },
+    {
+      "name": "Ladoo",
+      "color": "#F07F1A"
+    }
+  ],
+  "quiz": [
+    {
+      "category": "Bollywood Emoji",
+      "text": "🚂💑🇬🇧🌾",
+      "options": [
+        "Jab We Met",
+        "Veer-Zaara",
+        "Kuch Kuch Hota Hai",
+        "Dilwale Dulhania Le Jayenge"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "🎓3️⃣🤪",
+      "options": [
+        "Chhichhore",
+        "3 Idiots",
+        "Munna Bhai MBBS",
+        "Student of the Year"
+      ],
+      "answer": 1,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "🐒🧒🇵🇰🇮🇳",
+      "options": [
+        "Ek Tha Tiger",
+        "PK",
+        "Sultan",
+        "Bajrangi Bhaijaan"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "🏏🇮🇳🇬🇧🌾",
+      "options": [
+        "Lagaan",
+        "83",
+        "Dangal",
+        "Chak De India"
+      ],
+      "answer": 0,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "🤼‍♀️👧👧🥇",
+      "options": [
+        "Chak De India",
+        "Sultan",
+        "Mary Kom",
+        "Dangal"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "👽🔔📿",
+      "options": [
+        "PK",
+        "Koi Mil Gaya",
+        "Krrish",
+        "OMG"
+      ],
+      "answer": 0,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "🚗🇪🇸🪂🐂",
+      "options": [
+        "Dil Dhadakne Do",
+        "Rock On",
+        "Dil Chahta Hai",
+        "Zindagi Na Milegi Dobara"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "👑⚔️🐘🏰",
+      "options": [
+        "Padmaavat",
+        "RRR",
+        "Jodhaa Akbar",
+        "Baahubali"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "👻🏚️💃🎶",
+      "options": [
+        "Bhool Bhulaiyaa",
+        "Housefull",
+        "Golmaal",
+        "Stree"
+      ],
+      "answer": 0,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Bollywood Emoji",
+      "text": "💃🍶💔🏛️",
+      "options": [
+        "Mughal-E-Azam",
+        "Hum Dil De Chuke Sanam",
+        "Devdas",
+        "Bajirao Mastani"
+      ],
+      "answer": 2,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "Diwali celebrates the return of whom to Ayodhya?",
+      "options": [
+        "Rama",
+        "Krishna",
+        "Hanuman",
+        "Arjuna"
+      ],
+      "answer": 0,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "How many days does Diwali traditionally span?",
+      "options": [
+        "One",
+        "Three",
+        "Five",
+        "Seven"
+      ],
+      "answer": 2,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "Which goddess is worshipped on the main Diwali night?",
+      "options": [
+        "Saraswati",
+        "Parvati",
+        "Lakshmi",
+        "Durga"
+      ],
+      "answer": 2,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "The day before Diwali is called?",
+      "options": [
+        "Govardhan Puja",
+        "Dhanteras",
+        "Bhai Dooj",
+        "Choti Diwali"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "Deepavali literally means?",
+      "options": [
+        "New year",
+        "Night of fire",
+        "Festival of sweets",
+        "Row of lamps"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "Dhanteras is traditionally the day to buy?",
+      "options": [
+        "Crackers",
+        "Clothes",
+        "Sweets",
+        "Gold or utensils"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "Bhai Dooj celebrates the bond between?",
+      "options": [
+        "Neighbours",
+        "Husband and wife",
+        "Parents and children",
+        "Brothers and sisters"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "For Jains, Diwali marks?",
+      "options": [
+        "Mahavira's nirvana",
+        "Birth of Mahavira",
+        "Start of the year",
+        "Harvest"
+      ],
+      "answer": 0,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "Sikhs celebrate which event around Diwali?",
+      "options": [
+        "Gurpurab",
+        "Hola Mohalla",
+        "Vaisakhi",
+        "Bandi Chhor Divas"
+      ],
+      "answer": 3,
+      "seconds": 20,
+      "points": 10
+    },
+    {
+      "category": "Diwali Trivia",
+      "text": "Diwali falls on the new moon of which month?",
+      "options": [
+        "Kartik",
+        "Chaitra",
+        "Shravan",
+        "Ashwin"
+      ],
+      "answer": 0,
+      "seconds": 20,
+      "points": 10
+    }
+  ],
+  "polls": [
+    {
+      "text": "Most likely to eat all the ladoos",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to arrive fashionably late",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to light a sparkler and run",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to win every game tonight",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to be found next to the food table",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to start the dance floor",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to take 100 selfies",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to cry at a Bollywood song",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to argue with the DJ",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Most likely to still be here at 2 am",
+      "mostLikely": true,
+      "options": []
+    },
+    {
+      "text": "Best Diwali sweet of all time?",
+      "mostLikely": false,
+      "options": [
+        "Ladoo",
+        "Jalebi",
+        "Kaju katli",
+        "Gulab jamun"
+      ]
+    },
+    {
+      "text": "Best part of Diwali?",
+      "mostLikely": false,
+      "options": [
+        "The food",
+        "The lights",
+        "The family",
+        "The dancing"
+      ]
+    },
+    {
+      "text": "Which Bollywood era wins?",
+      "mostLikely": false,
+      "options": [
+        "70s classics",
+        "90s romance",
+        "2000s masala",
+        "Today"
+      ]
+    }
+  ],
+  "guessWho": [],
+  "couplesQuestions": [
+    "Who takes longer to get ready?",
+    "Who is the better cook?",
+    "Who said I love you first?",
+    "Who is more likely to forget an anniversary?",
+    "Who picks the movie?",
+    "Who is the bigger foodie?",
+    "Who apologises first after an argument?",
+    "Who spends more on Diwali shopping?",
+    "Who is the better dancer?",
+    "Who falls asleep first on movie night?"
+  ],
+  "titles": {
+    "ladoo": {
+      "first": "Lord of the Early Ladoos",
+      "on time": "Ladoo Timekeeper",
+      "fashionably late": "Minister of Late Ladoos",
+      "after the food": "Ladoo Last Call Legend"
+    },
+    "jalebi": {
+      "first": "Jalebi Early Bird",
+      "on time": "Punctual Jalebi Pro",
+      "fashionably late": "Jalebi Fashion Icon",
+      "after the food": "Jalebi Midnight Raider"
+    },
+    "kaju katli": {
+      "first": "Kaju Katli Trailblazer",
+      "on time": "Captain Kaju Katli",
+      "fashionably late": "Kaju Katli Runway Star",
+      "after the food": "Kaju Katli Crumb Hunter"
+    },
+    "gulab jamun": {
+      "first": "Gulab Jamun Gatekeeper",
+      "on time": "Gulab Jamun General",
+      "fashionably late": "Duchess of Gulab Jamun",
+      "after the food": "Gulab Jamun Ghost"
+    }
+  },
+  "captions": [
+    "Shine bright like a diya",
+    "Sparkle season",
+    "Family, lights and ladoos",
+    "Happy Diwali from us",
+    "Lit, literally",
+    "Dil se Diwali",
+    "Rangoli ready",
+    "Lights on, phones up"
+  ],
+  "commentator": [
+    "Tight race at the top!",
+    "Someone is on fire tonight",
+    "The crowd goes wild",
+    "Plot twist on the leaderboard",
+    "Ladoos for the leaders"
+  ],
+  "stickers": [
+    {
+      "id": "diya",
+      "emoji": "🪔",
+      "text": "You light up the room"
+    },
+    {
+      "id": "sweet",
+      "emoji": "🍬",
+      "text": "Sweetest person here"
+    },
+    {
+      "id": "dance",
+      "emoji": "💃",
+      "text": "Dance partner wanted"
+    },
+    {
+      "id": "karaoke",
+      "emoji": "🎤",
+      "text": "Karaoke king/queen"
+    },
+    {
+      "id": "plate",
+      "emoji": "🍛",
+      "text": "Best plate at the table"
+    },
+    {
+      "id": "photo",
+      "emoji": "📸",
+      "text": "Most photogenic"
+    },
+    {
+      "id": "laugh",
+      "emoji": "😂",
+      "text": "Made me laugh"
+    },
+    {
+      "id": "mvp",
+      "emoji": "🏆",
+      "text": "MVP"
+    }
+  ],
+  "aboutOptions": {
+    "sweet": [
+      "ladoo",
+      "jalebi",
+      "kaju katli",
+      "gulab jamun"
+    ],
+    "superpower": [
+      "teleport",
+      "invisibility",
+      "unlimited chai",
+      "mind reading"
+    ],
+    "arrival": [
+      "first",
+      "on time",
+      "fashionably late",
+      "after the food"
+    ]
+  },
+  "physicalGames": {
+    "hat": {
+      "name": "Hat Game",
+      "rule": "Pass the hat while the music plays. The couple holding the hat when it stops is out.",
+      "unit": "Couples left"
+    },
+    "cups": {
+      "name": "Musical Cups",
+      "rule": "Walk around the cups while the music plays. Grab a cup when it stops. No cup, you are out.",
+      "unit": "Cups left"
+    },
+    "hug": {
+      "name": "Hug Your Partner",
+      "rule": "Dance apart while the music plays. When it stops, find your partner and hug. Last couple to hug is out.",
+      "unit": "Couples left"
+    }
+  }
+}

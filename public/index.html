@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6B1E2E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <title>Diwali Night</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%94%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/guest.css">
+  <script defer src="/js/common.js"></script>
+  <script defer src="/vendor/fabric-5.3.0.min.js"></script>
+  <script defer src="/js/guest.js"></script>
+  <script defer src="/js/guest-play.js"></script>
+  <script defer src="/js/editor-image.js"></script>
+  <script defer src="/js/editor-gestures.js"></script>
+  <script defer src="/js/editor.js"></script>
+</head>
+<body class="festive-bg">
+  <div class="boot" id="boot"><span class="boot-diya" aria-hidden="true">🪔</span><p>Lighting the diyas…</p></div>
+
+  <!-- Join / About Me (same form; 'about' route = edit mode) -->
+  <section class="screen" data-screen="join" hidden>
+    <header class="join-hero" id="join-hero">
+      <div class="diya-row" aria-hidden="true">🪔 ✨ 🪔 ✨ 🪔</div>
+      <h1 class="welcome-line" id="join-welcome">Welcome to Diwali Night</h1>
+      <p class="party-name" id="join-party"></p>
+    </header>
+    <header class="topbar" id="about-bar" hidden>
+      <button type="button" class="btn btn-back" data-go="home" aria-label="Back to home">←</button>
+      <h1 class="topbar-title">About Me</h1>
+    </header>
+    <form class="sheet card-form" id="card-form" novalidate autocomplete="off">
+      <label class="field">
+        <span class="field-label">Your nickname <b class="req">*</b></span>
+        <input name="nickname" maxlength="24" placeholder="e.g. Priya" required enterkeyhint="next" autocapitalize="words">
+      </label>
+      <h2 class="form-section">My About Me card</h2>
+      <p class="form-hint">These feed tonight's games. Keep it fun!</p>
+      <label class="field">
+        <span class="field-label">What I do <span class="optional">(optional)</span></span>
+        <input name="company" maxlength="60" placeholder="e.g. Teacher, Google, Grade 4" enterkeyhint="next">
+      </label>
+      <label class="field">
+        <span class="field-label">One fun fact about me</span>
+        <input name="funFact" maxlength="140" placeholder="e.g. I once ran a marathon" enterkeyhint="next">
+      </label>
+      <label class="field">
+        <span class="field-label">My secret talent</span>
+        <input name="talent" maxlength="100" placeholder="e.g. I can juggle three oranges" enterkeyhint="done">
+      </label>
+      <div id="chip-groups"></div>
+      <button type="submit" class="btn btn-gold btn-block btn-xl" id="card-submit">🪔 Join the party</button>
+    </form>
+  </section>
+
+  <!-- Home -->
+  <section class="screen" data-screen="home" hidden>
+    <p class="home-party" id="home-party">Diwali Night</p>
+    <div class="me-card" id="me-card">
+      <p class="me-hello">Hi, <span id="home-name"></span> 👋</p>
+      <p class="me-title" id="home-title"></p>
+      <p class="me-team"><span class="team-dot" id="home-team-dot"></span><span id="home-team"></span></p>
+    </div>
+    <button type="button" class="banner" id="home-banner"><span class="banner-dot" aria-hidden="true"></span><span id="home-banner-text"></span></button>
+    <nav class="tiles" aria-label="Main menu">
+      <button type="button" class="btn tile tile-gold" data-go="photo"><span class="tile-emoji">📷</span>Photo Fun</button>
+      <button type="button" class="btn tile" data-go="play" id="tile-play"><span class="tile-emoji">🎮</span>Play<span class="tile-badge" id="play-badge" hidden>LIVE</span></button>
+      <button type="button" class="btn tile" data-go="leaderboard"><span class="tile-emoji">🏆</span>Leaderboard</button>
+      <button type="button" class="btn tile" data-go="about"><span class="tile-emoji">🙋</span>About Me</button>
+    </nav>
+    <div class="tiles tiles-small">
+      <button type="button" class="btn tile-small" data-go="wall">❤️ Photo Wall</button>
+      <button type="button" class="btn tile-small" data-go="shoutout">📣 Shout-out</button>
+    </div>
+  </section>
+
+  <!-- Play -->
+  <section class="screen" data-screen="play" hidden>
+    <header class="topbar">
+      <button type="button" class="btn btn-back" data-go="home" aria-label="Back to home">←</button>
+      <h1 class="topbar-title">Play</h1>
+    </header>
+    <div id="play-body" class="play-body"></div>
+  </section>
+
+  <!-- Shout-out -->
+  <section class="screen" data-screen="shoutout" hidden>
+    <header class="topbar">
+      <button type="button" class="btn btn-back" data-go="home" aria-label="Back to home">←</button>
+      <h1 class="topbar-title">Shout-out</h1>
+    </header>
+    <div class="sheet">
+      <h2 class="step-title"><span class="step-num">1</span>Who is it for?</h2>
+      <div id="shout-picker" class="picker"></div>
+      <h2 class="step-title"><span class="step-num">2</span>Pick a sticker</h2>
+      <div id="shout-stickers" class="sticker-grid"></div>
+      <p class="muted center" id="shout-left"></p>
+    </div>
+    <div class="sticky-action">
+      <button type="button" class="btn btn-gold btn-block btn-xl" id="shout-send" disabled>📣 Send shout-out</button>
+    </div>
+  </section>
+
+  <!-- Leaderboard -->
+  <section class="screen" data-screen="leaderboard" hidden>
+    <header class="topbar">
+      <button type="button" class="btn btn-back" data-go="home" aria-label="Back to home">←</button>
+      <h1 class="topbar-title">Leaderboard</h1>
+    </header>
+    <ol class="lb" id="lb-list"></ol>
+  </section>
+
+  <!-- Photo Wall -->
+  <section class="screen" data-screen="wall" hidden>
+    <header class="topbar">
+      <button type="button" class="btn btn-back" data-go="home" aria-label="Back to home">←</button>
+      <h1 class="topbar-title">Photo Wall</h1>
+    </header>
+    <p class="wall-intro">Tap ❤️ on your favourites. The most loved photo wins Best Photo!</p>
+    <p class="wall-pending" id="wall-pending" hidden></p>
+    <div class="wall-grid" id="wall-grid"></div>
+  </section>
+
+  <!-- Photo Fun / editor -->
+  <section class="screen screen-photo" data-screen="photo" hidden>
+    <div class="ed-start" id="ed-start">
+      <header class="topbar">
+        <button type="button" class="btn btn-back" data-go="home" aria-label="Back to home">←</button>
+        <h1 class="topbar-title">Photo Fun</h1>
+      </header>
+      <div class="ed-hero">
+        <div class="ed-hero-art" aria-hidden="true">📸<span>🪔</span><span>✨</span></div>
+        <h2>Make a Diwali photo!</h2>
+        <p>Snap a picture, add a frame, crowns and sparklers, then put it on the big TV.</p>
+      </div>
+      <div class="ed-start-actions">
+        <button type="button" class="btn btn-gold btn-block btn-xl" data-ed="camera">📷 Take Photo</button>
+        <button type="button" class="btn btn-block btn-xl" data-ed="gallery">🖼️ Choose from Gallery</button>
+        <button type="button" class="btn btn-ghost-light btn-block" data-ed="resume" hidden>← Back to my photo</button>
+      </div>
+      <input type="file" accept="image/*" capture="environment" class="visually-hidden" id="ed-camera-input" tabindex="-1" aria-hidden="true">
+      <input type="file" accept="image/*" class="visually-hidden" id="ed-gallery-input" tabindex="-1" aria-hidden="true">
+    </div>
+
+    <div class="ed-main" id="ed-main" hidden>
+      <div class="ed-top">
+        <button type="button" class="btn ed-tool" data-ed="home" aria-label="Back to home"><span>←</span>Home</button>
+        <button type="button" class="btn ed-tool" data-ed="new"><span>📷</span>New</button>
+        <button type="button" class="btn ed-tool" data-ed="undo" id="ed-undo"><span>↶</span>Undo</button>
+        <button type="button" class="btn ed-tool" data-ed="remove" id="ed-remove"><span>🗑️</span>Remove</button>
+        <button type="button" class="btn ed-tool" data-ed="clear"><span>🧹</span>Clear</button>
+      </div>
+      <div class="ed-stage" id="ed-stage">
+        <div class="ed-canvas-wrap" id="ed-wrap"><canvas id="ed-canvas"></canvas></div>
+        <div class="ed-busy" id="ed-busy" hidden><span class="spinner" aria-hidden="true"></span><span id="ed-busy-text">Working magic…</span></div>
+        <p class="ed-tip" id="ed-tip">Drag stickers or the caption · pinch to resize · double-tap to delete</p>
+      </div>
+      <div class="ed-tabs" role="tablist">
+        <button type="button" class="ed-tab is-active" data-tab="frames" role="tab"><span>🖼️</span>Frames</button>
+        <button type="button" class="ed-tab" data-tab="props" role="tab"><span>👑</span>Props</button>
+        <button type="button" class="ed-tab" data-tab="filters" role="tab"><span>🎨</span>Filters</button>
+        <button type="button" class="ed-tab" data-tab="backdrop" role="tab" hidden><span>🌌</span>Backdrop</button>
+        <button type="button" class="ed-tab" data-tab="caption" role="tab"><span>💬</span>Caption</button>
+      </div>
+      <div class="ed-panel">
+        <div class="tray" data-panel="frames" id="tray-frames"></div>
+        <div class="tray" data-panel="props" id="tray-props" hidden></div>
+        <div class="tray" data-panel="filters" id="tray-filters" hidden></div>
+        <div class="ed-backdrop" data-panel="backdrop" hidden>
+          <div class="backdrop-row">
+            <button type="button" class="btn backdrop-toggle" id="bd-toggle" aria-pressed="false">✨ Magic Backdrop: Off</button>
+            <label class="bd-slider"><span>Remove more white</span><input type="range" id="bd-sensitivity" min="0" max="100" value="50"></label>
+          </div>
+          <div class="tray tray-scenes" id="tray-scenes"></div>
+        </div>
+        <div class="ed-caption" data-panel="caption" hidden>
+          <div class="caption-bar">
+            <input id="ed-caption-input" maxlength="60" placeholder="Type a caption…" enterkeyhint="done" autocomplete="off">
+            <div class="cap-pos" role="group" aria-label="Caption position">
+              <button type="button" class="btn cap-pos-btn" data-cappos="top" aria-pressed="false">⬆️<span>Top</span></button>
+              <button type="button" class="btn cap-pos-btn" data-cappos="bottom" aria-pressed="true">⬇️<span>Bottom</span></button>
+              <button type="button" class="btn cap-pos-btn" data-cappos="hide" aria-pressed="false">🚫<span>Hide</span></button>
+            </div>
+          </div>
+          <div class="chip-row" id="caption-chips"></div>
+        </div>
+      </div>
+      <div class="ed-actions">
+        <button type="button" class="btn btn-gold ed-big" data-ed="save">💾 Save Photo</button>
+        <button type="button" class="btn ed-big" data-ed="share" id="ed-share">📺 Share on TV</button>
+      </div>
+    </div>
+
+    <div class="ed-result" id="ed-result" hidden>
+      <div class="ed-result-top">
+        <button type="button" class="btn btn-ghost-light" data-ed="close-result">← Keep editing</button>
+      </div>
+      <div class="ed-result-view" id="ed-result-saved">
+        <img id="ed-result-img" alt="Your finished Diwali photo">
+        <p class="ed-hint">👆 Press and hold the picture, then <b>Save to Photos</b></p>
+        <div class="ed-result-actions">
+          <a class="btn btn-gold" id="ed-download" download="diwali-photo.jpg">⬇️ Download</a>
+          <button type="button" class="btn" data-ed="share">📺 Share on TV</button>
+        </div>
+      </div>
+      <div class="ed-result-view" id="ed-result-shared" hidden>
+        <h2 class="shared-title" id="shared-title">🎉 It's on the TV!</h2>
+        <p class="shared-sub" id="shared-sub">Look up at the big screen.</p>
+        <img id="ed-shared-img" class="shared-preview" alt="Your shared photo">
+        <div class="ed-result-actions">
+          <button type="button" class="btn btn-gold" data-ed="another">📷 Make another</button>
+          <button type="button" class="btn" data-go="wall">❤️ Photo Wall</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overlays -->
+  <div class="team-reveal" id="team-reveal" hidden role="button" tabindex="0">
+    <p class="team-reveal-kicker">You're on</p>
+    <h1 class="team-reveal-name" id="team-reveal-name">Team Diya</h1>
+    <div class="team-reveal-art" aria-hidden="true">🪔</div>
+    <p class="team-reveal-tap">Tap to continue</p>
+  </div>
+
+  <div class="sheet-modal" id="caption-sheet" hidden>
+    <form class="sheet-modal-card" id="caption-sheet-form">
+      <h2>Edit caption</h2>
+      <input id="caption-sheet-input" maxlength="80" placeholder="Type a caption…" enterkeyhint="done" autocomplete="off">
+      <div class="sheet-modal-actions">
+        <button type="button" class="btn btn-ghost" data-close-sheet>Cancel</button>
+        <button type="submit" class="btn btn-gold">Save</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

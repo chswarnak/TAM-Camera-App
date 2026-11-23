@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Dependencies
+node_modules/
+
+# Party data created at runtime (seed.json is shipped)
+data/state.json
+data/state.json.*
+data/photos/*
+!data/photos/.gitkeep
+data/music/*
+!data/music/.gitkeep
+
+# Highlights video and photo zip (npm run highlights)
+exports/
+
+# Logs and OS clutter
+*.log
+.DS_Store

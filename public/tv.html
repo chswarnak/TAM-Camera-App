@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diwali Party TV</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/tv.css">
+</head>
+<body class="tv">
+  <canvas id="fx-canvas" class="fx-canvas" aria-hidden="true"></canvas>
+  <div class="garland" id="garland" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+
+  <main class="stage">
+    <!-- Welcome (host-selectable, not in the auto-cycle) -->
+    <section class="mode mode-welcome" data-mode="welcome">
+      <div class="safe welcome-grid">
+        <div class="welcome-copy">
+          <p class="eyebrow" data-bind="partyName"></p>
+          <h1 class="welcome-line">Shubh Deepavali!</h1>
+          <p class="welcome-sub">Join the Wi-Fi, then scan the code in the corner <span class="corner-arrow" aria-hidden="true">↘</span></p>
+          <p class="welcome-url">or open <b data-bind="joinUrl"></b> in your phone's browser</p>
+          <p class="guest-count"><span class="guest-count-num" data-bind="guestCount">0</span> <span data-bind="guestCountLabel">guests have joined</span></p>
+        </div>
+        <div class="title-marquee" id="title-marquee"></div>
+      </div>
+    </section>
+
+    <!-- Slideshow -->
+    <section class="mode mode-slideshow" data-mode="slideshow">
+      <div class="slide-layer" id="slide-a"><div class="slide-fill"></div><div class="slide-box"><img class="slide-img" alt=""></div></div>
+      <div class="slide-layer" id="slide-b"><div class="slide-fill"></div><div class="slide-box"><img class="slide-img" alt=""></div></div>
+      <div class="slide-shade"></div>
+      <div class="safe slide-info">
+        <div class="slide-caption" id="slide-caption"></div>
+        <div class="slide-strip" id="slide-strip"></div>
+      </div>
+      <div class="paused-pill" id="paused-pill" hidden>❚❚ Paused</div>
+      <div class="safe slide-empty" id="slide-empty" hidden>
+        <div class="slide-empty-copy">
+          <p class="eyebrow">The photo wall is waiting</p>
+          <h1 class="display">Share your first photo!</h1>
+          <p class="lead">Scan the code in the corner <span class="corner-arrow" aria-hidden="true">↘</span>, tap <strong>Photo Fun</strong>, add a frame and a sparkler, then <strong>Share on TV</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Wall -->
+    <section class="mode mode-wall" data-mode="wall">
+      <div class="safe wall-wrap">
+        <header class="mode-head">
+          <h2 class="heading">Photo Wall</h2>
+          <p class="lead">Heart your favourites on your phone. Most hearts wins Best Photo!</p>
+        </header>
+        <div class="wall-grid" id="wall-grid"></div>
+      </div>
+    </section>
+
+    <!-- Question -->
+    <section class="mode mode-question" data-mode="question">
+      <div class="safe question-wrap">
+        <header class="question-head">
+          <span class="pill" id="q-category"></span>
+          <span class="q-number" id="q-number"></span>
+        </header>
+        <div class="question-main">
+          <h1 class="question-text" id="q-text"></h1>
+          <div class="countdown" id="q-countdown">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+              <circle class="ring-fill" id="q-ring" cx="60" cy="60" r="52"></circle>
+            </svg>
+            <span class="countdown-num" id="q-seconds"></span>
+          </div>
+        </div>
+        <div class="q-options" id="q-options"></div>
+        <footer class="question-foot">
+          <span class="q-status" id="q-status"></span>
+          <span class="q-count"><span id="q-submissions">0</span> answers in</span>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="mode mode-results" data-mode="results">
+      <div class="safe results-wrap" id="results"></div>
+    </section>
+
+    <!-- Leaderboard -->
+    <section class="mode mode-leaderboard" data-mode="leaderboard">
+      <div class="safe board-wrap">
+        <header class="mode-head">
+          <h2 class="heading">Leaderboard</h2>
+          <p class="lead commentary" id="board-commentary"></p>
+        </header>
+        <div class="board" id="board"></div>
+      </div>
+    </section>
+
+    <!-- Who's here: guests as nodes on a big diya -->
+    <section class="mode mode-whoshere" data-mode="whoshere">
+      <div class="whoshere" id="whoshere"></div>
+    </section>
+
+    <!-- Couples quiz -->
+    <section class="mode mode-couples" data-mode="couples">
+      <div class="safe couples-wrap" id="couples"></div>
+    </section>
+
+    <!-- Physical game -->
+    <section class="mode mode-physical" data-mode="physical">
+      <div class="safe physical-wrap">
+        <header class="physical-head">
+          <h1 class="display" id="pg-name"></h1>
+          <span class="pill" id="pg-round"></span>
+        </header>
+        <p class="physical-rule" id="pg-rule"></p>
+        <div class="physical-main">
+          <div class="remaining">
+            <span class="remaining-num" id="pg-remaining"></span>
+            <span class="remaining-unit" id="pg-unit"></span>
+          </div>
+          <div class="pg-status" id="pg-status"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trophy -->
+    <section class="mode mode-trophy" data-mode="trophy">
+      <div class="safe trophy-wrap" id="trophy"></div>
+    </section>
+  </main>
+
+  <!-- Persistent on every mode: host welcome (top left), joining QR (bottom right),
+       and the shout-out rail along the bottom edge, left of the QR. Mode content is laid
+       out inside .safe, which keeps clear of all three. -->
+  <header class="tv-header" id="tv-header"><span data-bind="welcomeLine"></span></header>
+  <figure class="corner-qr" id="corner-qr">
+    <figcaption class="corner-qr-label">Scan to join</figcaption>
+    <div class="corner-qr-card"><div class="corner-qr-code" data-bind="cornerQr"></div></div>
+  </figure>
+  <div class="rail" id="rail">
+    <div class="ticker is-visible" id="ticker" aria-live="off"><div class="ticker-label">Shout-outs</div><div class="ticker-track"><div class="ticker-run" id="ticker-run"></div></div></div>
+    <div class="burst" id="burst" hidden></div>
+  </div>
+  <div class="stop-flash" id="stop-flash" hidden><span>STOP!</span></div>
+  <div class="hug-countdown" id="hug-countdown" hidden></div>
+  <button class="sound-btn" id="sound-btn" type="button">🔊 Tap to enable sound</button>
+  <div class="reconnect-pill" id="reconnect-pill" hidden>Reconnecting…</div>
+
+  <audio id="music" preload="auto"></audio>
+
+  <script src="/vendor/qrcode-generator.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/tv-fx.js"></script>
+  <script src="/js/tv-audio.js"></script>
+  <script src="/js/tv-whoshere.js"></script>
+  <script src="/js/tv.js"></script>
+</body>
+</html>

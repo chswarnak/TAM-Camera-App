@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#3E0F1A">
+  <title>Host Dashboard · Diwali Party Hub</title>
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/host.css">
+</head>
+<body>
+  <!-- PIN login -->
+  <main id="login" class="login festive-bg" hidden>
+    <form class="login-card" data-submit="login" autocomplete="off">
+      <div class="login-diya" aria-hidden="true">🪔</div>
+      <h1>Host Dashboard</h1>
+      <p class="login-sub">Enter the host PIN printed when the server started.</p>
+      <label class="sr-only" for="pin-input">Host PIN</label>
+      <input id="pin-input" name="pin" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]*"
+             autocomplete="current-password" placeholder="••••••" required>
+      <p id="login-error" class="login-error" role="alert"></p>
+      <button class="btn btn-gold btn-block" type="submit">Open dashboard</button>
+    </form>
+  </main>
+
+  <!-- Dashboard -->
+  <div id="app" hidden>
+    <header class="top-bar festive-bg">
+      <div class="brand"><span aria-hidden="true">🪔</span> <span id="brand-name">Host</span></div>
+      <div class="top-meta">
+        <span id="guest-count" class="top-count"></span>
+        <span id="conn" class="conn" title="Live connection"><span class="sr-only">Live connection</span></span>
+      </div>
+    </header>
+
+    <div class="top festive-bg">
+      <div id="status-line" class="status-line" aria-live="polite"></div>
+      <nav class="run-strip" aria-label="Run party">
+        <button class="btn run-btn" data-action="strip-photos" type="button">
+          <span class="run-icon" aria-hidden="true">📸</span><span class="run-label">Photos</span>
+          <span id="strip-photo-badge" class="badge" hidden></span>
+        </button>
+        <button id="strip-next" class="btn btn-gold run-btn run-next" data-action="strip-next" type="button">
+          <span class="run-icon" aria-hidden="true">▶️</span><span class="run-label">Next Q</span>
+        </button>
+        <button id="strip-reveal" class="btn run-btn" data-action="strip-reveal" type="button">
+          <span class="run-icon" aria-hidden="true">✨</span><span class="run-label">Reveal</span>
+        </button>
+        <button class="btn run-btn" data-action="strip-physical" type="button">
+          <span class="run-icon" aria-hidden="true">🎵</span><span class="run-label">Floor Game</span>
+        </button>
+        <button class="btn run-btn" data-action="strip-award" type="button">
+          <span class="run-icon" aria-hidden="true">🏆</span><span class="run-label">Best Photo</span>
+        </button>
+      </nav>
+      <div id="next-type" class="next-type" role="radiogroup" aria-label="Next question type"></div>
+      <div id="award-confirm" class="award-confirm" hidden></div>
+      <nav id="tabs" class="tabs" aria-label="Dashboard sections"></nav>
+    </div>
+
+    <div id="warnings" class="warnings"></div>
+
+    <main class="panels">
+      <section class="panel" data-panel="guests" hidden></section>
+      <section class="panel" data-panel="photos" hidden></section>
+      <section class="panel" data-panel="questions" hidden></section>
+      <section class="panel" data-panel="rounds" hidden></section>
+      <section class="panel" data-panel="couples" hidden></section>
+      <section class="panel" data-panel="games" hidden></section>
+      <section class="panel" data-panel="tv" hidden></section>
+      <section class="panel" data-panel="setup" hidden></section>
+    </main>
+  </div>
+
+  <script src="/vendor/qrcode-generator.js"></script>
+  <script src="/js/common.js"></script>
+  <script src="/js/host.js"></script>
+  <script src="/js/host-people.js"></script>
+  <script src="/js/host-questions.js"></script>
+  <script src="/js/host-games.js"></script>
+  <script src="/js/host-setup.js"></script>
+</body>
+</html>
